@@ -1,0 +1,39 @@
+@import "../../Styles/Variables.module";
+
+.wrapper {
+  height: 100%;
+  background: black;
+  display: flex;
+
+  > .filter {
+    min-width: 180px;
+    background: $grey_color;
+  }
+
+  > .list {
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
+    width: 660px;
+    background: $grey_color;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $grey_color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue_color;
+    }
+
+  }
+
+  > .map {
+    background-color: $grey_color;
+    height: calc(100vh - 50px);
+    width: 100%;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../Styles/Variables.module";
+.hotelsList{
+  background: $grey_color;
+  padding: 10px;
+  > .toolsButton {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 80px
+  }
+}

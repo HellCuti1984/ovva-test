@@ -1,0 +1,24 @@
+@import "../../Styles/Variables.module";
+
+.header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  > .logo {
+    height: inherit;
+    color: #ffffff;
+    background: $blue_color;
+
+    > h2 {
+      line-height: 10px;
+      text-transform: uppercase;
+      padding: 0 15px;
+    }
+  }
+
+  > .tools {
+    line-height: 20px;
+  }
+}

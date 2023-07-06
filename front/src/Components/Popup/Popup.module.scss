@@ -1,0 +1,49 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 400;
+  overflow: hidden;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.popup {
+  width: 460px;
+  background: #FFFFFF;
+  box-shadow: 0 0 3px rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 100;
+  margin: 25vh auto;
+}
+
+.closeButton {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.title {
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 23px;
+  color: #313942;
+}
+
+.text {
+  font-size: 13px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}

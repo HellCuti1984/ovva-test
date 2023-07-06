@@ -1,0 +1,44 @@
+@import "../../Styles/Variables.module.scss";
+
+
+.wrapper {
+  position: relative;
+  display: flex;
+  background: $grey_color;
+}
+
+.rooms {
+  overflow-y: scroll;
+  height: calc(100vh - 50px);
+  background: $grey_color;
+  min-width: 260px;
+  max-width: 260px;
+
+  .list {
+    position: relative;
+    padding: 10px;
+
+    > .toolsButton {
+      width: 100%;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 40px
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $grey_color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue_color;
+  }
+
+}

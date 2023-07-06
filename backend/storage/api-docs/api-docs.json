@@ -1,0 +1,745 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ГОСТИННИЦЫ - API",
+        "description": "Описание всех методов приложения ГОСТИННИЦЫ",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "Авторизация"
+                ],
+                "summary": "Авторизация в системе",
+                "description": "Авторизация в системе",
+                "operationId": "login",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "email": "test@mail.ru",
+                                    "password": "123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "Авторизация прошла успешно",
+                                        "token": "abracadabra",
+                                        "id": 1,
+                                        "first_name": "",
+                                        "last_name": "",
+                                        "second_name": "",
+                                        "email": "test@mail.ru"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/registration": {
+            "post": {
+                "tags": [
+                    "Авторизация"
+                ],
+                "summary": "Регистрация в системе",
+                "description": "Регистрация в системе",
+                "operationId": "registration",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "id": 1,
+                                    "first_name": "",
+                                    "last_name": "",
+                                    "second_name": "",
+                                    "email": "test@mail.ru",
+                                    "password": "123"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "Авторизация прошла успешно",
+                                        "token": "abracadabra",
+                                        "id": 1,
+                                        "first_name": "",
+                                        "last_name": "",
+                                        "second_name": "",
+                                        "email": "test@mail.ru"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/booking/get": {
+            "get": {
+                "tags": [
+                    "Бронь"
+                ],
+                "summary": "Получить объекты брони по ID",
+                "description": "Получить объекты брони по ID",
+                "operationId": "indexBooking",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "customer_name": "ФИО человека",
+                                    "email": "test@mail.ru",
+                                    "room_id": "1",
+                                    "start_date": "2023-07-12 06:45:23",
+                                    "end_date": "2023-07-12 06:45:23",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/booking/getById": {
+            "get": {
+                "tags": [
+                    "Бронь"
+                ],
+                "summary": "Получить объект брони по ID",
+                "description": "Получить объект брони по ID",
+                "operationId": "showBooking",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID брони",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "customer_name": "ФИО человека",
+                                    "email": "test@mail.ru",
+                                    "room_id": "1",
+                                    "start_date": "2023-07-12 06:45:23",
+                                    "end_date": "2023-07-12 06:45:23",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/booking/update": {
+            "put": {
+                "tags": [
+                    "Бронь"
+                ],
+                "summary": "Обновление объекта брони",
+                "description": "Обновление объекта брони",
+                "operationId": "updateBooking",
+                "parameters": [
+                    {
+                        "name": "hotel_id",
+                        "in": "query",
+                        "description": "ID брони",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "customer_name": "ФИО человека",
+                                    "email": "test@mail.ru",
+                                    "room_id": "1",
+                                    "start_date": "2023-07-12 06:45:23",
+                                    "end_date": "2023-07-12 06:45:23",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "customer_name": "ФИО человека",
+                                        "email": "test@mail.ru",
+                                        "room_id": "1",
+                                        "start_date": "2023-07-12 06:45:23",
+                                        "end_date": "2023-07-12 06:45:23",
+                                        "deleted_at": "2023-07-12 06:45:23",
+                                        "created_at": "2023-07-12 06:45:23",
+                                        "updated_at": "2023-07-12 06:45:23"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/booking/delete": {
+            "delete": {
+                "tags": [
+                    "Бронь"
+                ],
+                "summary": "Удаление объекта брони по ID",
+                "description": "Удаление объекта брони по ID",
+                "operationId": "destroyBooking",
+                "parameters": [
+                    {
+                        "name": "booking_id",
+                        "in": "query",
+                        "description": "ID брони",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/hotels/get": {
+            "get": {
+                "tags": [
+                    "Отели"
+                ],
+                "summary": "Список отелей",
+                "description": "Получить список всех отелей",
+                "operationId": "indexHotels",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "id": "1",
+                                    "name": "Название отеля",
+                                    "address": "г. Нижний Тагил, ул. Мира 56, д. 2",
+                                    "description": "Супер-дупер отель",
+                                    "user_id": "1",
+                                    "geo_lat": "44.222",
+                                    "geo_lon": "44.222",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hotels/getById": {
+            "get": {
+                "tags": [
+                    "Отели"
+                ],
+                "summary": "Получить объект отеля по ID",
+                "description": "Получить объект отеля по ID",
+                "operationId": "showHotels",
+                "parameters": [
+                    {
+                        "name": "hotel_id",
+                        "in": "query",
+                        "description": "ID отеля",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "id": "1",
+                                    "name": "Название отеля",
+                                    "address": "г. Нижний Тагил, ул. Мира 56, д. 2",
+                                    "description": "Супер-дупер отель",
+                                    "user_id": "1",
+                                    "geo_lat": "44.222",
+                                    "geo_lon": "44.222",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hotels/store": {
+            "post": {
+                "tags": [
+                    "Отели"
+                ],
+                "summary": "Создание нового объекта отеля",
+                "description": "Создание нового объекта отеля",
+                "operationId": "storeHotels",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "name": "Название отеля",
+                                    "address": "г. Нижний Тагил, ул. Мира 56, д. 2",
+                                    "description": "Супер-дупер отель",
+                                    "user_id": "1",
+                                    "geo_lat": "44.222",
+                                    "geo_lon": "44.222",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "name": "Название отеля",
+                                        "address": "г. Нижний Тагил, ул. Мира 56, д. 2",
+                                        "description": "Супер-дупер отель",
+                                        "user_id": "1",
+                                        "geo_lat": "44.222",
+                                        "geo_lon": "44.222",
+                                        "deleted_at": "2023-07-12 06:45:23",
+                                        "created_at": "2023-07-12 06:45:23",
+                                        "updated_at": "2023-07-12 06:45:23"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hotels/update": {
+            "put": {
+                "tags": [
+                    "Отели"
+                ],
+                "summary": "Обновление объекта отеля",
+                "description": "Обновление объекта отеля",
+                "operationId": "updateHotels",
+                "parameters": [
+                    {
+                        "name": "hotel_id",
+                        "in": "query",
+                        "description": "ID отеля",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "name": "Название отеля",
+                                    "address": "г. Нижний Тагил, ул. Мира 56, д. 2",
+                                    "description": "Супер-дупер отель",
+                                    "user_id": "1",
+                                    "geo_lat": "44.222",
+                                    "geo_lon": "44.222",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "name": "Название отеля",
+                                        "address": "г. Нижний Тагил, ул. Мира 56, д. 2",
+                                        "description": "Супер-дупер отель",
+                                        "user_id": "1",
+                                        "geo_lat": "44.222",
+                                        "geo_lon": "44.222",
+                                        "deleted_at": "2023-07-12 06:45:23",
+                                        "created_at": "2023-07-12 06:45:23",
+                                        "updated_at": "2023-07-12 06:45:23"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hotels/delete": {
+            "delete": {
+                "tags": [
+                    "Отели"
+                ],
+                "summary": "Удаление объекта отеля по ID",
+                "description": "Удаление объекта отеля по ID",
+                "operationId": "destroyHotels",
+                "parameters": [
+                    {
+                        "name": "hotel_id",
+                        "in": "query",
+                        "description": "ID отеля",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/rooms/get": {
+            "get": {
+                "tags": [
+                    "Комнаты"
+                ],
+                "summary": "Список комнат",
+                "description": "Список комнат",
+                "operationId": "indexRooms",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "filter": {
+                                        "priceMin": "0",
+                                        "priceMax": "0",
+                                        "capacityMin": "0",
+                                        "capacityMax": "0"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "hotels_id": "1",
+                                    "number": "1",
+                                    "capacity": "1",
+                                    "price": "42.23",
+                                    "description": "Комната",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/getById": {
+            "get": {
+                "tags": [
+                    "Комнаты"
+                ],
+                "summary": "Получить объект комнаты по ID",
+                "description": "Получить объект комнаты по ID",
+                "operationId": "showRoom",
+                "parameters": [
+                    {
+                        "name": "room_id",
+                        "in": "query",
+                        "description": "ID комнаты",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "hotels_id": "1",
+                                    "number": "1",
+                                    "capacity": "1",
+                                    "price": "42.23",
+                                    "description": "Комната",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/getByHotelId": {
+            "get": {
+                "tags": [
+                    "Комнаты"
+                ],
+                "summary": "Получить объект комнаты по ID отеля",
+                "description": "Получить объект комнаты по ID отеля",
+                "operationId": "showRoomByHotelId",
+                "parameters": [
+                    {
+                        "name": "hotel_id",
+                        "in": "query",
+                        "description": "ID комнаты",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "hotels_id": "1",
+                                    "number": "1",
+                                    "capacity": "1",
+                                    "price": "42.23",
+                                    "description": "Комната",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/store": {
+            "post": {
+                "tags": [
+                    "Комнаты"
+                ],
+                "summary": "Создание объекта отеля",
+                "description": "Создание объекта отеля",
+                "operationId": "storeRoom",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "hotels_id": "1",
+                                    "number": "1",
+                                    "capacity": "1",
+                                    "price": "42.23",
+                                    "description": "Комната",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "hotels_id": "1",
+                                        "number": "1",
+                                        "capacity": "1",
+                                        "price": "42.23",
+                                        "description": "Комната",
+                                        "deleted_at": "2023-07-12 06:45:23",
+                                        "created_at": "2023-07-12 06:45:23",
+                                        "updated_at": "2023-07-12 06:45:23"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/update": {
+            "put": {
+                "tags": [
+                    "Комнаты"
+                ],
+                "summary": "Обновление объекта комнаты",
+                "description": "Обновление объекта комнаты",
+                "operationId": "updateRoom",
+                "parameters": [
+                    {
+                        "name": "room_id",
+                        "in": "query",
+                        "description": "ID комнаты",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "hotels_id": "1",
+                                    "number": "1",
+                                    "capacity": "1",
+                                    "price": "42.23",
+                                    "description": "Комната",
+                                    "deleted_at": "2023-07-12 06:45:23",
+                                    "created_at": "2023-07-12 06:45:23",
+                                    "updated_at": "2023-07-12 06:45:23"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Успех",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "hotels_id": "1",
+                                        "number": "1",
+                                        "capacity": "1",
+                                        "price": "42.23",
+                                        "description": "Комната",
+                                        "deleted_at": "2023-07-12 06:45:23",
+                                        "created_at": "2023-07-12 06:45:23",
+                                        "updated_at": "2023-07-12 06:45:23"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/delete": {
+            "delete": {
+                "tags": [
+                    "Комнаты"
+                ],
+                "summary": "Удаление объекта комнаты по ID",
+                "description": "Удаление объекта комнаты по ID",
+                "operationId": "destroyRoom",
+                "parameters": [
+                    {
+                        "name": "room_id",
+                        "in": "query",
+                        "description": "ID комнаты",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    }
+}

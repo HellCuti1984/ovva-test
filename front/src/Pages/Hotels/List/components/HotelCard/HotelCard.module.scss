@@ -1,0 +1,46 @@
+@import "../../../../../Styles/Variables.module";
+
+.card {
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+
+  > .header {
+    padding: 10px;
+
+    > .title {
+      font-weight: 600;
+      color: $blue_color;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  > .logo {
+    width: inherit;
+  }
+
+  > .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    > button {
+      width: 100%;
+    }
+
+    > .information {
+      > .price {
+        display: flex;
+
+        > span {
+          display: block;
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
